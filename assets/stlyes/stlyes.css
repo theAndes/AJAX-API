@@ -1,3 +1,6 @@
+body{
+    background: aliceblue;
+}
 html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -98,13 +101,15 @@ section#gif {
     flex-flow: row wrap;
 }
 .gif-holder {
+    background-color: white;
     width: 320px;
     margin: 10px auto;
-    border: 1px solid;
+    /* border: 1px solid; */
     text-align: center;
     padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px 1px grey;
 }
-
 img.down-load {
     width: auto;
     cursor: crosshair;

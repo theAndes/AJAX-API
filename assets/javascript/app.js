@@ -1,7 +1,7 @@
 // create globals
 giphy = new Array();//array of active gif urls
 still = new Array();//array or gif stills
-var topics = ['lego', 'happy', 'funny', 'silly', 'dorky'];//start up list
+var topics = ['lego', 'space', 'funny', 'science', 'moon'];//start up list
 var gif;
 limit = 10;//amount of gifs. may change to user choice
 // This function handles events when gif button is clicked
@@ -84,11 +84,11 @@ function getGif(userGif) {
             var gifDiv = $('<div/>', { class: 'gif-holder' });
             var gifURL = response.data[i].images.fixed_width_still.url;
             var image = $('<img>').attr({ 'src': gifURL, 'value': i, 'title':'Click ME!! '+ response.data[i].title.toString()});
-            //var image2 = $('<img>').attr({ 'src': 'assets/images/download.png', 'class':'down-load', 'tittle':'Get the GIF!', 'data-name': response.data[i].images.originl_mp4.mp4});
+            var image2 = $('<img>').attr({ 'src': 'assets/images/download.png', 'class':'down-load', 'tittle':'Get the GIF!', 'data-name': response.data[i].images.originl_mp4});
             var ratingPara = $('<p/>', { calss: 'rating' }).text('GIF Rated: ' + gifRating.toString().toUpperCase());
             var titlePara = $('<p/>', { calss: 'title' }).text(response.data[i].title.toString().toUpperCase());
 
-            gifDiv.append(image, titlePara, ratingPara)//, image2);
+            gifDiv.append(image, titlePara, ratingPara);
             sectionGif.append(gifDiv);
 
         }

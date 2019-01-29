@@ -58,12 +58,13 @@ $("#add-gif").on("click", function (event) {
 
 //TODO:Pass userGif to API request 5x <<==will need to modify later to 9 or 10
 function getGif(userGif) {
+    var key = config.one;
     //Create variable for section where images will be displayed. will be used for append
     var sectionGif = $('#gif');
     //Empty section to prevent duplicates
     sectionGif.empty();
     //Set to URL for AJAX
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userGif + "&rating=g&api_key=jnaknxQ3CkCxLyS8lNLBh708roP6S64k&limit=" + limit + "";//<<Need to config the key and set it to secret
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userGif + "&rating=g&api_key="+ key +"&limit=" + limit + "";//<<Need to config the key and set it to secret
 
     $.ajax({
         url: queryURL,
